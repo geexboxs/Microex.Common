@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Microex.Common
+namespace Microex.Common.Extensions
 {
     public static class Json
     {
-        public static JsonSerializerSettings _DefaultSerializeSettings { get; set; } = new JsonSerializerSettings()
+        public static JsonSerializerSettings DefaultSerializeSettings { get; set; } = new JsonSerializerSettings()
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
             //Error = (sender, args) =>
@@ -27,7 +27,7 @@ namespace Microex.Common
             //ContractResolver = new AllPropertiesResolver()
         };
 
-        public static JsonSerializerSettings _IgnoreErrorSerializeSettings { get; set; } = new JsonSerializerSettings()
+        public static JsonSerializerSettings IgnoreErrorSerializeSettings { get; set; } = new JsonSerializerSettings()
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
             Error = (sender, args) =>
@@ -48,11 +48,11 @@ namespace Microex.Common
         {
             if (ignoreError)
             {
-                return JsonConvert.SerializeObject(@this, _IgnoreErrorSerializeSettings);
+                return JsonConvert.SerializeObject(@this, IgnoreErrorSerializeSettings);
             }
             else
             {
-                return JsonConvert.SerializeObject(@this, _DefaultSerializeSettings);
+                return JsonConvert.SerializeObject(@this, DefaultSerializeSettings);
             }
         }
 
@@ -60,11 +60,11 @@ namespace Microex.Common
         {
             if (ignoreError)
             {
-                return JsonConvert.DeserializeObject<T>(@this, _IgnoreErrorSerializeSettings);
+                return JsonConvert.DeserializeObject<T>(@this, IgnoreErrorSerializeSettings);
             }
             else
             {
-                return JsonConvert.DeserializeObject<T>(@this, _DefaultSerializeSettings);
+                return JsonConvert.DeserializeObject<T>(@this, DefaultSerializeSettings);
             }
         }
     }
