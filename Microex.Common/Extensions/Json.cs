@@ -13,10 +13,6 @@ namespace Microex.Common.Extensions
         public static JsonSerializerSettings DefaultSerializeSettings { get; set; } = new JsonSerializerSettings()
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            //Error = (sender, args) =>
-            //{
-            //    args.ErrorContext.Handled = true;
-            //},
             TypeNameHandling = TypeNameHandling.Auto,
             TypeNameAssemblyFormatHandling = TypeNameAssemblyFormatHandling.Simple,
             DateFormatString = "yyyy-MM-dd HH:mm:ss",
@@ -24,7 +20,6 @@ namespace Microex.Common.Extensions
             {
                 new StringEnumConverter()
             }
-            //ContractResolver = new AllPropertiesResolver()
         };
 
         public static JsonSerializerSettings IgnoreErrorSerializeSettings { get; set; } = new JsonSerializerSettings()
@@ -41,7 +36,6 @@ namespace Microex.Common.Extensions
             {
                 new StringEnumConverter()
             }
-            //ContractResolver = new AllPropertiesResolver()
         };
 
         public static string ToJson(this object @this, bool ignoreError = true)
