@@ -44,7 +44,7 @@ override `JsonConvert.DefaultSerializeSettings` or use `obj.ToJson()` & `json.To
 
 perform
 `iApplicationBuilder.AddAngularRoute()`
-to integrate angular index.html at one line of code.
+to integrate angular `index.html` at one line of code.
 
 perform
 `iMvcBuilder.AddPrefferedJsonSettings()`
