@@ -9,6 +9,6 @@ namespace Microex.Common.Abstractions
     public class ResponseStatus
     {
         public int Code { get; set; }
-        public string Message { get; set; }
+        public object Status { get; set; }
     }
 }

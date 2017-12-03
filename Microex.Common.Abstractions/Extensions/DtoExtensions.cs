@@ -8,9 +8,9 @@ namespace Microex.Common.Abstractions.Extensions
 {
     public static class DtoExtensions
     {
-        public static void SetStatus(this IResponse @this, int code,string message = "")
+        public static void SetStatus(this IResponse @this, int code,object status = null)
         {
-            @this.Status = new ResponseStatus() {Code = code, Message = message};
+            @this.Status = new ResponseStatus() {Code = code, Status = status };
         }
     }
 }

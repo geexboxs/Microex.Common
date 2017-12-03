@@ -23,6 +23,10 @@ namespace Microex.Common.Mvc.Extensions
                 jsonOptions.SerializerSettings.TypeNameHandling = TypeNameHandling.Auto;
                 jsonOptions.SerializerSettings.TypeNameAssemblyFormatHandling = TypeNameAssemblyFormatHandling.Simple;
                 jsonOptions.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+                jsonOptions.SerializerSettings.Error = (sender, args) =>
+                {
+                    args.ErrorContext.Handled = true;
+                };
                 jsonOptions.SerializerSettings.Converters = (IList<JsonConverter>)new List<JsonConverter>()
                 {
                     (JsonConverter) new StringEnumConverter()
