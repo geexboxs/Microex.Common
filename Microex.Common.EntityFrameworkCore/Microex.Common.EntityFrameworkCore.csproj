@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>1.1.1</Version>
+    <Authors>Microex</Authors>
+    <Company>Microex</Company>
+    <Description>dbcontext definition with ISoftDeletable &amp; IEntity with auto generated create/lastUpdate time</Description>
+    <Copyright>https://github.com/snys98/Microex.Common</Copyright>
+    <PackageLicenseUrl>https://github.com/snys98/Microex.Common</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/snys98/Microex.Common</PackageProjectUrl>
+    <PackageIconUrl>https://avatars0.githubusercontent.com/u/11873100?s=400&amp;u=da243f6643833e9b509690bc0297507116eeafa1&amp;v=4</PackageIconUrl>
+    <RepositoryUrl>https://github.com/snys98/Microex.Common</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
+    <PackageTags>microex,entity,framework,core</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microex.Common.Abstractions" Version="1.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microex.Common.Abstractions\Microex.Common.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
