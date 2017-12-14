@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Microex.Common.Abstractions.Entity
 {
-    public class SoftDeletableEntity:EntityBase
+    /// <summary>
+    /// abstraction for softdeletable entity classes
+    /// </summary>
+    public interface ISoftDeletable:IEntity
     {
-        public bool IsDeleted { get; set; }
+        bool IsDeleted { get; set; }
     }
 }

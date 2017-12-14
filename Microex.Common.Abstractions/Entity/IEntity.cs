@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Microex.Common.Abstractions
+namespace Microex.Common.Abstractions.Entity
 {
     /// <summary>
     /// abstraction for database entity classes
