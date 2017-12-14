@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.2.0</Version>
+    <Version>1.1.5</Version>
     <Description>common interfaces(eg:IEntity)</Description>
     <Copyright>Microex</Copyright>
     <PackageLicenseUrl>https://github.com/snys98/Microex.Common</PackageLicenseUrl>
@@ -13,7 +13,6 @@
     <RepositoryType>github</RepositoryType>
     <PackageTags>microex,abstraction</PackageTags>
     <Authors>Microex</Authors>
-    <PackageReleaseNotes>discard IEntity</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
