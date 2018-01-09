@@ -11,7 +11,7 @@ namespace Microex.Common.Abstractions.Extensions
     {
         public static void SetStatus(this IResponse @this, int code,object status = null)
         {
-            @this.Status = new ResponseStatus() {Code = code, Status = status };
+            @this.Status = new ResponseStatus() {Code = code, Data = status };
         }
     }
 }

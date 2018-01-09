@@ -6,6 +6,6 @@ namespace Microex.Common.Abstractions.Dto
     {
         [Required]
         public int Code { get; set; }
-        public object Status { get; set; }
+        public object Data { get; set; }
     }
 }

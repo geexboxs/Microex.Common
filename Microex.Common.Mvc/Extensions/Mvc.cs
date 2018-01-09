@@ -75,6 +75,7 @@ namespace Microex.Common.Mvc.Extensions
             using (var serviceScope = builder.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
                 var tempInstance = serviceScope.ServiceProvider.GetService<T>();
+                tempInstance.Database.EnsureCreated();
                 tempInstance.Database.Migrate();
                 tempInstance.Seed();
             }

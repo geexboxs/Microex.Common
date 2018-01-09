@@ -15,8 +15,10 @@ services.AddPrefferedJsonSettings(), app.AddAngularRoute()</Description>
     <RepositoryUrl>https://github.com/snys98/Microex.Common</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <PackageTags>microex,extensions.mvc</PackageTags>
-    <Version>1.1.5</Version>
+    <Version>1.2.2</Version>
     <Authors>Microex</Authors>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+    <FileVersion>1.2.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
