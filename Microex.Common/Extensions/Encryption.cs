@@ -24,19 +24,6 @@ namespace Microex.Common.Extensions
             return sTemp.ToLower();
         }
 
-        public static string ComputeMd5(this Stream stream)
-        {
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            var bytHash = md5.ComputeHash(stream);
-            md5.Clear();
-            string sTemp = "";
-            for (int i = 0; i < bytHash.Length; i++)
-            {
-                sTemp += bytHash[i].ToString("X").PadLeft(2, '0');
-            }
-            return sTemp.ToLower();
-        }
-
         public static string ComputeMd5(this byte[] bytes)
         {
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
