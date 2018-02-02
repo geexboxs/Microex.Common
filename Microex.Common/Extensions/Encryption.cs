@@ -36,5 +36,42 @@ namespace Microex.Common.Extensions
             }
             return sTemp.ToLower();
         }
+
+        public static string ComputeMd5(this Stream stream)
+        {
+            if (!stream.CanSeek)
+            {
+                throw new NotSupportedException("流类型不支持该方法,请使用带有out参数的重载");
+            }
+            var position = stream.Position;
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            var bytHash = md5.ComputeHash(stream);
+            stream.Position = position;
+            md5.Clear();
+            string sTemp = "";
+            for (int i = 0; i < bytHash.Length; i++)
+            {
+                sTemp += bytHash[i].ToString("X").PadLeft(2, '0');
+            }
+            return sTemp.ToLower();
+        }
+
+        public static string ComputeMd5(this Stream stream,out MemoryStream outStream)
+        {
+            var position = stream.Position;
+            outStream = new MemoryStream();
+            stream.CopyTo(outStream);
+            outStream.Position = position;
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            var bytHash = md5.ComputeHash(outStream);
+            outStream.Position = position;
+            md5.Clear();
+            string sTemp = "";
+            for (int i = 0; i < bytHash.Length; i++)
+            {
+                sTemp += bytHash[i].ToString("X").PadLeft(2, '0');
+            }
+            return sTemp.ToLower();
+        }
     }
 }
