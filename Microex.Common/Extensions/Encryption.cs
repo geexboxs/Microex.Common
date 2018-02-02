@@ -73,5 +73,31 @@ namespace Microex.Common.Extensions
             }
             return sTemp.ToLower();
         }
+        /// <summary>
+        /// 将浏览器FileReader读取的dataurl转化成标准的base64字符串,同时获取其文件扩展名
+        /// </summary>
+        /// <param name="base64WithWebHeader"></param>
+        /// <param name="fileExt"></param>
+        /// <returns></returns>
+        public static string DataUrlToBase64(this string base64WithWebHeader, out string fileExt)
+        {
+            var splitIndex = base64WithWebHeader.IndexOf(",");
+            if (splitIndex <= 0)
+            {
+                throw new Exception("未找到Base64的Web Header");
+            }
+            var webHeader = base64WithWebHeader.Split(new[] { ',' }, 2)[0];
+            if (webHeader.IndexOf("jpeg") > 0)
+            {
+                fileExt = "jpeg";
+                return base64WithWebHeader.Substring(splitIndex + 1);
+            }
+            if (webHeader.IndexOf("png") > 0)
+            {
+                fileExt = "png";
+                return base64WithWebHeader.Substring(splitIndex + 1);
+            }
+            throw new Exception("不支持的Base64文件格式");
+        }
     }
 }
